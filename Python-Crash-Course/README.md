@@ -11,5 +11,5 @@ Organised by Chapters. Each chapter directory follows a uniform three-tier struc
 │   ├── 📁 resource_used/       # Book annotations, cheat sheets, and reference material.
 │   └── 📁 sandbox/             # Active code-along files, experiments, and inline book examples.
 │
-└── 📄 README.md                # Central hub, architecture overview, and core concepts log, with handwritten work attached if needed.
+└── 📄 README.md                # Central hub, architecture overview, and core concepts log, with handwritten work attached if prompted.
 ```

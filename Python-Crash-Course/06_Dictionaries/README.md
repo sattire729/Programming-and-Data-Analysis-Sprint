@@ -70,5 +70,22 @@ valuen
 >.
 >One of the keys is keyn
 >```
+>The `for` statement above is like any other `for` statement, except that we've wrapped the sorted() function around the dictionary.keys() method. This tells python to get all the keys in the dictionary and sort them before starting the loop.
+>We can use the `values()` method to return a sequence of values without any keys. e.g...
+>```code
+>for <value containing variable> in dictionary.values():
+>    print(<value containing variable>)
+>```
+>this will print all the values in dictionary dictionary, like:
+>```code
+>value1
+>value2
+>.
+>.
+>.
+>valuen
+>```
+>
+>
 >
 >

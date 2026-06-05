@@ -26,4 +26,22 @@
 >If we try to access a key in a dictionary the normal way and it doesnt exist then we will get an error (a `KeyError`), a workaround for this is `using get() method to access values`, using this method we can set a default value that will be returned if the requested key doesnt exist. They get() method requires a key as a first argument and as a second optional argument, we can pass the value to be returned if the key doesnt exist (value `None` will be returned if left second argument is empty)
 >so `dictionary.get(keya, 'No value assigned')` will return 'No value assigned' if there is no key named keya and will act normally if it does.
 >
->
+>Python lets us `loop through a dictionary`. Since dictionaries can be used to store information in a variety of ways, therefore, several different ways exist to loop through then. We can loop through all of a dictionary's key-value pairs, through its keys or through its values.
+>To write a `for` loop for a dictionary's key-value pairs, we create names for the two variables that will hold the key and value in each key-value pair, e.g...
+>```code
+>for <key holding variable>, <value holding variable> in dictionary.items()
+>    print(<key holding variable>)
+>    print(<value holding variable>)
+>```
+here in each loop the 2 variables holds all the key and value pairs' values one by one from start, so here we will get the result:
+```code
+key1
+value1
+key2
+value2
+.
+.
+.
+keyn
+valuen
+```

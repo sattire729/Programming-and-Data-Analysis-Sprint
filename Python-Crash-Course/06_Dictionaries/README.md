@@ -3,9 +3,27 @@
 [📄 Click here to open the Annotated PDF](resources_used/06-dictionaries-annotations.pdf)
 ### Key Insights and Progress Log.  
 >In this chapter we learn about Python's dictionaries, which allow us to relate pieces of related information.
->A dictionary in Python is a collection of `key-value pairs`. Each `key` is connected to a `value` and we can use a key to access the value associated with the key, the keys' and values' value can be a number, a string, a list, a dictionary, infact any object we can create in Python can be a value in a dictionary (of key or value). In python a distionary is wrapped in brances ({}) with a series of key value pairs inside the braces in format `key: value` seperated by commas, e.g...
+>A `dictionary` in Python is a collection of `key-value pairs`. Each `key` is connected to a `value` and we can use a key to access the value associated with the key, the keys' and values' value can be a number, a string, a list, a dictionary, infact any object we can create in Python can be a value in a dictionary (of key or value). In python a distionary is wrapped in brances ({}) with a series of key value pairs inside the braces in format `key: value` seperated by commas, e.g...
 >```code
 >dictionary = {key1: value1, key2: value2,..., keyn: valuen}
 >```
 >A `key-value pair` is a set of values associated with each other, when we provide a key python returns the value associated with it, to get the value associated with a key, we give the name of the dictionary and then place the key inside a set of square braces e.g... `dictionary[key2]` will return `value2` (know that we can have an infinite number of key-value pairs in a dictionary).
+>Dictionaries are dynamic, we can `add new key-value pairs` at any time, to do so we just give the name of the dictionary followed by the new key in square brackets, along with the new value e.g... `dictionary[keyn+1] = valuen+1` will add a new key value pair as mentioned, also dictionaries retail the order in which they were defined so when we add new key-value pairs to a dictionary, they are added to the end of the dictionary and when we print a dictionary by `print(dictionary)` we get the elements in the same order they were added to the dictionary same for a for loop, so we will get `{key1: value1, key2: value2,..., keyn: valuen, keyn+1: valuen+1}` by the print call.
+>Also we can `start with an empty dictionary` with just an empty set of braces. e.g... `dictionary_1 = {}`, this is an empty dictionary and we can start filling in key-value pairs as usual.
+>We can `modify values in a dictionary' by giving the name of the dictionary with the key in square brackets and then the new value we want associated with the key. e.g... `dictionary[key1] = valuenew1` modifies the value of key1 in dictionary from value1 to valuenew1, so now dictionary[key1] returns valuenew1!
+>`Removing key-value pairs` is child's play too, to do so we use the `del statement`, all `del` needs is the name of the dictionary and the key whose key-value pair you want to remove, so a simple `del dictionary[keyn+1]` will delete the key keyn+1 from dictionary dictionary, along with its value so now `print(dictionary)` returns `{key1: value1, key2: value2,..., keyn: valuen}`.
+>We can use a dictionary to store different kinds of information about one object or to store one kind of informations about many objects, for the latter we can use the format of definition of the dictionary as:
+>```code
+>dictionary = {
+>    key1: value1,
+>    key2: calue2,
+>    .
+>    .
+>    .
+>    keyn: valuen,
+>    }
+>```
+>If we try to access a key in a dictionary the normal way and it doesnt exist then we will get an error (a `KeyError`), a workaround for this is `using get() method to access values`, using this method we can set a default value that will be returned if the requested key doesnt exist. They get() method requires a key as a first argument and as a second optional argument, we can pass the value to be returned if the key doesnt exist (value `None` will be returned if left second argument is empty)
+>so `dictionary.get(keya, 'No value assigned')` will return 'No value assigned' if there is no key named keya and will act normally if it does.
+>
 >

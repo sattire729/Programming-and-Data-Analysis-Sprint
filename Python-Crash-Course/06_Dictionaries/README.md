@@ -85,6 +85,9 @@ valuen
 >.
 >valuen
 >```
+>The for statement here pulls each value from the dictionary and assigns it to the variable `<value containing variable>`. Also know that this approach pulls all the values from the dictionary without checking for repeats, if we want the result without repetition, we can use a set. A `set` is an unordered collection of objects in which each item should be unique. e.g... `set(dictionary.values())` will return an unordered set of all values in the dictionary with no repeated units, i.e... When we wrap `set()` around a collection of values that contain duplicate items, Python identifies the unique items in the collection and builds a set from those items, know that sets are also wrapped in brackets, but it looks more like a list with each item seperated by a comma rather than a dictionary where there are key-value pairs.
+>So basically we can also build a set directly in Python using brances and seperating the items with commas.
+>
 >
 >
 >

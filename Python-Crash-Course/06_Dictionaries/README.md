@@ -89,7 +89,10 @@ valuen
 >So basically we can also build a set directly in Python using brances and seperating the items with commas.
 >
 >Sometimes we might want to store multiple dictionaries in a list, or a list of items as a value in a dictionary. This is called  `nesting`. We can nest dictionaries inside a list, a list of items inside a dictionary, or even a dictionary inside another dictionary.
->
+>We can store many `dictionaries inside lists`, e.g... `list = [dictionary_1, dictionary_2,...]` where dictionary_n is a dictionary (we can put dictionary explicitly or a variable that points to a dictionary)
+>(Random: If we want a loop to run a certain number of times, we can use the range funtion in the `for` statement, e.g... `for <random variable which may or may not be used> in range(n)` will start a loop that will run n times and its our choice if we want to use the variable whose value will go from 0 to n-1 throughout n loops)
+>Its common to store a number of dictionaries in a list when each dictionary contains many kinds of information about one object
+>Rather than putting a dictionary inside a list, its sometimes useful to put a `list inside a dictionary` 
 >
 >
 >

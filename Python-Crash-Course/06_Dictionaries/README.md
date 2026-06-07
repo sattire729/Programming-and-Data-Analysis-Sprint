@@ -92,7 +92,10 @@ valuen
 >We can store many `dictionaries inside lists`, e.g... `list = [dictionary_1, dictionary_2,...]` where dictionary_n is a dictionary (we can put dictionary explicitly or a variable that points to a dictionary)
 >(Random: If we want a loop to run a certain number of times, we can use the range funtion in the `for` statement, e.g... `for <random variable which may or may not be used> in range(n)` will start a loop that will run n times and its our choice if we want to use the variable whose value will go from 0 to n-1 throughout n loops)
 >Its common to store a number of dictionaries in a list when each dictionary contains many kinds of information about one object
->Rather than putting a dictionary inside a list, its sometimes useful to put a `list inside a dictionary` 
+>Rather than putting a dictionary inside a list, its sometimes useful to put a `list inside a dictionary` (ponder where), also we can easily loop thru a list inside a dictionary by the simple intuitive way.
+>(Random: When we need to break up a long print() call, we can choose an appropriate point at which to break the line being printed, and end the line with a quotation line. Indent the next line, add an opening quotation mark, and continue the string, Python will automatically combine all of the strings it finds inside the parenthesis).
+>We can nest a list inside a dictionary anytime we want more than one value to be associated with a single key in a dictionary.
+>We can `nest a dictionary inside another dictionary` too, e.g...  if we have several users for a website, we can maybe set the keys as their username and the value of the respective keys as additional information! (ponder about loop too, its intuitive).
 >
 >
 >

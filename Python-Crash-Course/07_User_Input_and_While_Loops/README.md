@@ -75,3 +75,14 @@ while True:
 Now we should notice that a loop that starts with `while True` will run forever unless it reaches a break statement, when it does, Python exits the loop just as it reads `break`. (We can use the break statement in any of Python's loops, eg we could use it to quit a for loop that's working thru a list or a dictionary)
 Lastly we see how we `use continue in a loop`, rather than breaking out of a loop entirely without executing the rest of its code, we can use the `continue` statement to return to the beginning of the loop, based on the result of a conditional test, e.g...
 ```code
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    
+    print(current number)
+```
+This code prints all odd numbers between -1 and 10! (ponder) - just as python reads `continue` in a while loop, it ignores rest of the loop and returns to the beginning of the while loop.  
+Random - If our program, due to some logical issue, runs forever, then we can exit the infinite loop by pressing CTRL-C / To avoid writing infinite loops, we should test every while loop and make sure the loop stops when we expect it to.
+

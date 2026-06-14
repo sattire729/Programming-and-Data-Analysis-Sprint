@@ -88,3 +88,37 @@ Random - If our program, due to some logical issue, runs forever, then we can ex
 
 So far, we have worked with only one piece of information at a time, we took user input and then did smth with that input, the next time thru the while loop we'd recieve another input value and respond to that. But to keep track of many users and pieces of information, we'll need to use lists and dictionaries with our `while` loops.  
 A `for` loop is effective for looping thru a list, but we shouldn't modify a list inside a `for` loop because Python will have trouble keeping track of the items in the list. To modify a list as you work through it, use a `while` loop. Using `while` loops with lists and dictionaries allows us to collect, store, and organise lots of input to examine and report later on.
+`First` we understood `Moving Items from One List to Another`, the working can go like: 
+```code
+list_full = [<thing1>, <thing2>, <thing3>, <thing4>]
+list_empty = []
+
+while list_full:  # This condition will remain true until list_full doesnt become empty
+    <current_var> = list_full.pop()
+    list_empty.append(<current_var>)
+```
+After this code finishes running, all the items from list_full will be moved to list_empty (in reverse order, ponder, leaving list_full empty at end)
+`Second` we undestood `Removing All Instances of Specific Values from a List`, we already know how to use `remove()` to remove a specific value from a list, but it only removes the first instance of the item specified, to remove all the instances of the item we will have to use a while loop, the working can go like:
+```code
+list = [<thing1>, <thing2>, <thing1>, <thing3>, <thing4>, <thing1>]
+
+while <thing1> in list:
+    list.remove(<thing1>)
+```
+Ponder how all instances of <thing1> will be removed by this but now by a single remove() method.  
+`Third` we understood `Filing a Dictionary with User Input`, as we know, we can prompt for as much input as we need in each pass thru a `while` loop. So in the code below we are Filling a dictionary by asking for both the key and the value. 
+```code
+dictionary ={}
+<flag_variable> = True
+
+while <flag_variable>:
+    key = input(<prompt for user to enter "to be key" for the dictionary>)
+    value = input(<prompt for user to enter "to be value" for the key entered above>)
+
+    dictionary[key] = value
+
+    repeat = input(<ask the user if they want to continue by setting a quit value>)
+    if repeat == <quit value>:
+        <flag_variable> = False
+```
+by this code we can easily make howver long dictionary and store information nicely.

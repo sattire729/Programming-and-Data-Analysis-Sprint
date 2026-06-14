@@ -86,3 +86,5 @@ while current_number < 10:
 This code prints all odd numbers between -1 and 10! (ponder) - just as python reads `continue` in a while loop, it ignores rest of the loop and returns to the beginning of the while loop.  
 Random - If our program, due to some logical issue, runs forever, then we can exit the infinite loop by pressing CTRL-C / To avoid writing infinite loops, we should test every while loop and make sure the loop stops when we expect it to.
 
+So far, we have worked with only one piece of information at a time, we took user input and then did smth with that input, the next time thru the while loop we'd recieve another input value and respond to that. But to keep track of many users and pieces of information, we'll need to use lists and dictionaries with our `while` loops.  
+A `for` loop is effective for looping thru a list, but we shouldn't modify a list inside a `for` loop because Python will have trouble keeping track of the items in the list. To modify a list as you work through it, use a `while` loop. Using `while` loops with lists and dictionaries allows us to collect, store, and organise lots of input to examine and report later on.

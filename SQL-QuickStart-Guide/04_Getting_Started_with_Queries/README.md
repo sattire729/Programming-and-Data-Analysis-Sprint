@@ -136,4 +136,4 @@ ORDER BY
     LastName DESC
 LIMIT 10
 ```
-Note that this query performs `ORDER BY` operation first and then applied the limit.
+Note that this query performs `ORDER BY` operation first and then applied the limit, so we get the rows that comes in top 10 in ascending order of First name then descending order of Last name, the opposite order will have a different result.

@@ -62,3 +62,21 @@ The semicolon at the end of the statement is optional in this case, since we are
 In the `SELECT` clause, we have chosen 3 fields to display. We must seperate every field with a comma (except for the last field). Omitting a comma between fields or adding a comma after the last field are both common syntax mistakes that will result in a `syntax error` appearing in our query in our Results Pane.  
 We could write the entire query on one single line instead of breaking in into multiple lines like done above and the SQL browser would still recognise the code and return results.  But its best practice to seperate queries into clauses with the content of each clause indented on a new line. 
 
+If we apply an `alias` to a field name in our query, then the name of a field in our results pane can be edited for our convienience. An alias is always listedd directly after the name of a field from our database. Aliases are commonly associated with the `AS` keyword, however, the use of the `AS` keyword between field name and the alias name is optional in most RDBMS impementations. Note that we can create an alias by just writing `<orig> AS <alias>` or `<orig> <alias>` if the alias contains only one word and we have to close the multi word aliases in some sort of demarcation, either single quotes ('') or square brackets [] in the case below otherwise the same sytax as above. 
+```code
+/*
+CREATED BY: Sattire
+CREATED ON: DD/MM/YY
+DESCRIPTION: This query selects the first name, last name, email and phone number fields from the customers table and demonstrates 4 different ways to create an alias.
+*/
+
+SELECT
+    FirstName AS 'First Name',
+    LastName AS [Last Name],
+    Email AS EMAIL
+    Phone CELL
+FROM
+    customers
+```
+Adding alias will not change the data in the database. Aliases only alter how fields are displayed in the Results Pane.  
+

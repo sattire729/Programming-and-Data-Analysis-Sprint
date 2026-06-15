@@ -116,3 +116,24 @@ ORDER BY
     FirstName ASC,
     LastName DESC
 ```
+
+Sometimes we are not interested in all the records in the fields, if that is the case, then we can limit our results to a specified number of rows by the keyword `LIMIT`. Adding the keyword `LIMIT 10` after the `ORDER BY` clause returns only the first ten records from the query in the sort order we specify (ponder the result of using the `LIMIT` keyword before the `ORDER BY` clause vs reversing this order)
+```code
+/*
+CREATED BY: Sattire
+CREATED ON: DD/MM/YY
+DESCRIPTION: This query selects the first 10 records from the customers table, ordered by first name (ascending), then last name (descending).
+*/
+
+SELECT
+    FirstName AS 'First Name',
+    LastName AS [Last Name],
+    Email AS [EMAIL]
+FROM
+    customers
+ORDER BY
+    FirstName ASC,
+    LastName DESC
+LIMIT 10
+```
+Note that this query performs `ORDER BY` operation first and then applied the limit.

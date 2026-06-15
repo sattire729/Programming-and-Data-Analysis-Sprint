@@ -80,3 +80,39 @@ FROM
 ```
 Adding alias will not change the data in the database. Aliases only alter how fields are displayed in the Results Pane.  
 
+The `ORDER BY` clause (after the `FROM` clause) allows us to sort our query results by any field(s) we choose.The default sort order is ascending (A-Z). The special keyword `ASC`, which specifies ascending order, is optional. To sort in decreasing order (Z-A), we would add the keyword DESC after the field being sorted. `ORDER BY` LastName `DESC` would sort the aliased column Last Name in descending order.  
+```code
+/*
+CREATED BY: Sattire
+CREATED ON: DD/MM/YY
+DESCRIPTION: This query selects the first name, last name, and emai from the customers table, ordered by Last Name
+*/
+
+SELECT
+    FirstName AS 'First Name',
+    LastName AS [Last Name],
+    Email AS EMAIL
+    
+FROM
+    customers
+ORDER BY
+    LastName ASC
+```
+We can use the `ORDER BY` clause to sort by multiple columns as well, here we will sory first by First Name (ascending) and then by Last Name (Desc) (First has more priority and the next ones are tiebreakers). This weill require us to list the 2 fields in our `ORDER BY` clause. Just like the `SELECT` clause, when listing multiple fields we must seperate them by commas.
+```code
+/*
+CREATED BY: Sattire
+CREATED ON: DD/MM/YY
+DESCRIPTION: This query selects the first name, last name, and emai from the customers table, ordered by first name (ascending), then last name (descending)
+*/
+
+SELECT
+    FirstName AS 'First Name',
+    LastName AS [Last Name],
+    Email AS [EMAIL]
+FROM
+    customers
+ORDER BY
+    FirstName ASC,
+    LastName DESC
+```

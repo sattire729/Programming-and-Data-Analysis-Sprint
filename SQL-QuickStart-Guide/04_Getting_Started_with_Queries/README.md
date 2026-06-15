@@ -55,3 +55,10 @@ FROM
     customers;
 ```
 We can run the statement by clicking on the `Execute SQL play button` in the `menu bar`. The results are displayed in the `Results Pane` below (The requested fields from the specified table), the `MessagesPane` also shows information about the query (How many rows returned, the time taken and the Query itself too!).  
+
+All queries must conform to a certain syntax (`coding syntax`) to be understood by SQL browser, but there is more than just that, it is also important that other database users can understand and follow our queries, the practice of writing queries in a standardized, readable, and consistent way is knows as `coding convention`.  
+First we understood that the special symbol (*) tells the SQL browser to retrieve and display all fields in a table, so a `*` symbol after `SELECT` will select all fields.  
+The semicolon at the end of the statement is optional in this case, since we are only writing one SQL statement. The semicolon denotes the end of an SQL statement.  
+In the `SELECT` clause, we have chosen 3 fields to display. We must seperate every field with a comma (except for the last field). Omitting a comma between fields or adding a comma after the last field are both common syntax mistakes that will result in a `syntax error` appearing in our query in our Results Pane.  
+We could write the entire query on one single line instead of breaking in into multiple lines like done above and the SQL browser would still recognise the code and return results.  But its best practice to seperate queries into clauses with the content of each clause indented on a new line. 
+

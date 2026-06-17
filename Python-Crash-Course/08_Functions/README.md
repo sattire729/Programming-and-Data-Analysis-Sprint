@@ -52,7 +52,7 @@ function_name(para2=<arg2>, para1=<arg1>)
 Here the function hasn't changed, but when we call the function, we ecplicitly tell Python which parameter each argument should be matched with, so no worries about matching up order, an equivalent function call would have been `function_name(para1=<arg1>, para2=<arg2>)`.  
 When writing a function, we can define a `Default Value` for each paramter. If tan argument for a parameter is provided in the function call, Python uses the argument value, if not then it uses the paramter's default value. Therefore when we set a default value for a parameter in function definition, we can exclude the corresponding argument in function call! The code might go like: 
 ```code
-def function_name(para1, para2==<default arg>):
+def function_name(para1, para2=<default arg>):
     """Whatever the function does"""
     <code which may or may not use the
      2 arguments (1st to be 100%, 2nd optional) provided in the funcion call>
@@ -66,7 +66,38 @@ As logic dictates, the first and second call will have para1 as <arg1> and para2
 Because positional arguments, keyword arguments and default values can all be used together, we will oftn have several equivalent ways to call a function. just like the (1st and 2nd) and (3rd and 4th) function call above. It doesn't really matter which calling style we use. As long as our function call produle the output we want, we should use one which is easiest to understand.  
 When we use function we might often face errors about unmatched arguments. `Unmatched Arguments` occur when we provide fewer or more argumnts than a function needs to do its work, if we do provide more or less arguments than prompted i function def, then we get a Error and the traceback gives a TypeError with the location of the problem, and the traceback also tells us by how much did we miss the mark, since it also shows us the parametres names, it shows how using descriptive names for function parametres can come in handy.  
 
-A function doesn't always have to display its outpur directly. Instead, it can process some data and then return a value or set of values. The value the function returns is called a `return value`. The `return statement` takes a value from inside a function and sends it back to the line that called the function. Return value allows us to move much of out program's grunt work into functions, which can simplify the body of our program.
+A function doesn't always have to display its outpur directly. Instead, it can process some data and then return a value or set of values. The value the function returns is called a `return value`. The `return statement` takes a value from inside a function and sends it back to the line that called the function. Return value allows us to move much of out program's grunt work into functions, which can simplify the body of our program. The code of such a program can go like: 
+```code
+def function_name(para1, para2):
+    """Whatever the function does"""
+    <code which may or may not use the
+     2 arguments provided in the funcion call.
+     But we create a new variable here with a particular value
+     we want to return when the function is called, say return_value>
+     return return_value # The return statement with `return` as keyword
+
+variable_name = function_name(<arg1>, <arg 2>)
+```
+The function function_name takes 2 arguments, assigns it to para1 and para2 named variables and we can then use these to perform an action and assign it to a variable inside function body, e.g... `return_value = f"{para1} and {para2}"` Then in the return statement we set the variable `return_value` to be returned to the callling line of our function. When we call a function that returns a value, we need to provide a variable that the return value can be assigned to (`variable_name` here). Now we can use the returned value as we like!  
+Sometimes it makes sense to make an argument optional so that people using the function can choose to provide extra information only if they want to. We can use defaullt values to make an argument optional, e.g... we can assign the paarameter whose value is optional (e.g middle name) an empty default value and ignore the argument unless the user provides a value, we can do so by assigning the optional argument's parameter an empty string ('') in the function def (should be put at the end of all other parametres (ponder)) and then use it in our code only if we recieve an argument by using if statement and the fact that `if <var_name>` returns True if the variable has a value and False when it does not (e.g... is an empty list or even string), so the code might go like: 
+```code
+def function_name(para1, para2, para3=''):
+    """Whatever the function does"""
+    if para3:
+        <code that considers the fact that we have all 3 arguments
+        and assigns the return value to variable `ret`>
+    else:
+        <code that proceeds without the third optional argument
+        and assigns the return value to variable `ret`>
+    return ret
+
+result = function_name(<arg1>, <arg2>)
+print(result)
+result = function_name(<arg1>, <arg2>, <arg3>)
+print(result)
+```
+Here both the function calls work perfectly because we made the 3rd argument optional. (Nice)
+
 
 We can pass a list to a function when needed (or even more complex objects like dictionaries), when we do, the function gets direct access to the contents of the list. One simple example of `Passing a List` to a function might go like:
 ```code

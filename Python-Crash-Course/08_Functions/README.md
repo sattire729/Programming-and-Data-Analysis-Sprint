@@ -40,6 +40,17 @@ function_name(<arg1>, <arg2>)
 The definition shows that this function needs 2 arguments (since it has 2 parametres) so we need to provide them both during function call and then we can use them as we like in the function body, simply put, the values <arg1> and "<arg2> will be assigned to variables namesd "para1", "para2" and we can use this variables freely in the function body to do a specific task we like. 
 We can also call a function as many times as needed, just changing the arguments while calling the function will act upon the new arguments the same way as it did for every call before them. 
 `Order matters in Positional Arguments`, we can get unexpected results if we mix up the order of arguments in a function call when using positional arguments (ponder). Make sure the order of the arguments in your function call matches the order of the parametres in the function's definition. 
+`Keyword Arguments` - A keyword argument is a name-value pair that we pass to a function. We directly associate the name and the value within the argument, so when we pass the argument to the function, there s no confusion even if the order is messed up. The code of such function call might go like: 
+```code
+def function_name(para1, para2):
+    """Whatever the function does"""
+    <code which may or may not use the
+     2 arguments (to be 100%) provided in the funcion call>
+
+function_name(para2=<arg2>, para1=<arg1>)
+```
+Here the function hasn't changed, but when we call the function, we ecplicitly tell Python which parameter each argument should be matched with, so no worries about matching up order, an equivalent function call would have been `function_name(para1=<arg1>, para2=<arg2>)`.  
+
 
 We can pass a list to a function when needed (or even more complex objects like dictionaries), when we do, the function gets direct access to the contents of the list. One simple example of `Passing a List` to a function might go like:
 ```code

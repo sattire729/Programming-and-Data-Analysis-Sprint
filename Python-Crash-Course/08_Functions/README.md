@@ -62,4 +62,10 @@ list_2 = []
 move_items(list_1, list_2)
 show_final_results(list_1, list_2)
 ```
-This is better since if further in our code if we want to do the same operation again but to different list, we can just pass them as  arguments to our already defined functions, and if we want to modify the function we defined in some way, we can just do it once and the changes will take place everywhere the function was called. This also shows how every function should have one specific job, if we write a function and notice the funbction is doing many differnt tasks, we can split the code into 2 functions
+This is better since if further in our code if we want to do the same operation again but to different list, we can just pass them as  arguments to our already defined functions, and if we want to modify the function we defined in some way, we can just do it once and the changes will take place everywhere the function was called. This also shows how every function should have one specific job, if we write a function and notice the function is doing many differnt tasks, we can split the code into 2 functions. 
+Sometimes we want to `prevent a function from modifying a list`. We can do so easily by passing the function a copy of the list, not the original so that the original list stays unaffected, e.g... while calling the function move_items above we can use `move_items(list_1[:], list_2)`, here the slice notation [:] makes a copy of the list to send to the function. So basically the blueprint of sending a copt of a list to a function goes like:
+```code
+function_name(list_name[:])
+```
+Also we should note that even though we can preserve the contents of a list by passing a copy of it to our functions, we should pass the original list unless we have specific reason to pass a copy. Its more efficient for a function to work with an existing list, because it avoids using he time and memory needed to make a seperate list.  
+

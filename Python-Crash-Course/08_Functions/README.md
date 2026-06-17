@@ -50,6 +50,21 @@ def function_name(para1, para2):
 function_name(para2=<arg2>, para1=<arg1>)
 ```
 Here the function hasn't changed, but when we call the function, we ecplicitly tell Python which parameter each argument should be matched with, so no worries about matching up order, an equivalent function call would have been `function_name(para1=<arg1>, para2=<arg2>)`.  
+When writing a function, we can define a `Default Value` for each paramter. If tan argument for a parameter is provided in the function call, Python uses the argument value, if not then it uses the paramter's default value. Therefore when we set a default value for a parameter in function definition, we can exclude the corresponding argument in function call! The code might go like: 
+```code
+def function_name(para1, para2==<default arg>):
+    """Whatever the function does"""
+    <code which may or may not use the
+     2 arguments (1st to be 100%, 2nd optional) provided in the funcion call>
+
+function_name(para2=<arg2>, para1=<arg1>)
+functon_name(<arg1>, <arg2>)
+function_name(<arg1>)
+function_name(para1=<arg1>)
+```
+As logic dictates, the first and second call will have para1 as <arg1> and para2 as <arg2> (Python will ignore the default value if we explicitly provide an arg in function call) but in third and fourth function call, the function will assign <arg1> to para1 and <default arg> to para2! (Note that when we use default values, any parameter with a default value needs to be listed after all the parametres that dont have default values. This allows Python to continue interpreting positional arguments correctly)
+Because positional arguments, keyword arguments and default values can all be used together, we will oftn have several equivalent ways to call a function. just like the (1st and 2nd) and (3rd and 4th) function call above. It doesn't really matter which calling style we use. As long as our function call produle the output we want, we should use one which is easiest to understand.  
+When we use function we might often face errors about unmatched arguments. `Unmatched Arguments` occur when we provide fewer or more argumnts than a function needs to do its work, if we do provide more or less arguments than prompted i function def, then we get a Error and the traceback gives a TypeError with the location of the problem, and the traceback also tells us by how much did we miss the mark, since it also shows us the parametres names, it shows how using descriptive names for function parametres can come in handy.  
 
 
 We can pass a list to a function when needed (or even more complex objects like dictionaries), when we do, the function gets direct access to the contents of the list. One simple example of `Passing a List` to a function might go like:

@@ -35,3 +35,31 @@ def function_name(<[parameter] variable containing list>):
 
 function_name(<[argument] variable containing list>)
 ```
+When we pass a list to a function. the function can modify the list. Any changes made to the list inside the function's body are permanent, allowing us to work efficiently even when we're dealing with large amounts of data, e.g... we can move items from one list to another empty one using functions (could have done without functions too, ponder the benefits of using (different) functions for each specific job over simple code). The code might go like
+```code
+def move_items(full_list, empty_list):
+    """
+    Simulate moving each item, until none are left.
+    Move each item from full_list to empty_list
+    """
+    while full_list:
+        current_item = full_list.pop()
+        print(f"Moving item: {current_item})
+        empty_list.append(current_item)
+
+def show_final_results(full_list, empty_list):
+    print("This is the list full_list: ")
+    print(full_list)
+    print("\nThis is the list empty_list")
+    for item in empty_list:
+        print(item)
+```
+We have defined the function move_items() with 2 parametres and it will take 2 lists as the arguments in function call like `move_items(list_1, list_2)` and will move all items from list_1 to list_2, then we defined the function show_final_results() which will print both the lists (which have to be provided in function call), this is very organised way to carry on this specific task, the code that does most of the work has been moved to two seperate functions, which makes the main part of the program easier to understand. The main body can just go like:
+```code
+list_1 = [item1, item2, item3, item 4]
+list_2 = []
+
+move_items(list_1, list_2)
+show_final_results(list_1, list_2)
+```
+This is better since if further in our code if we want to do the same operation again but to different list, we can just pass them as  arguments to our already defined functions, and if we want to modify the function we defined in some way, we can just do it once and the changes will take place everywhere the function was called. This also shows how every function should have one specific job, if we write a function and notice the funbction is doing many differnt tasks, we can split the code into 2 functions

@@ -34,17 +34,17 @@
 >    print(<value holding variable>)
 >```
 >here in each loop the 2 variables holds all the key and value pairs' values one by one from start, so here we will get the result:
-```code
-key1
-value1
-key2
-value2
-.
-.
-.
-keyn
-valuen
-```
+>```code
+>key1
+>value1
+>key2
+>value2
+>.
+>.
+>.
+>keyn
+>valuen
+>```
 >Notice that the second half of the for statement includes the name of the dictionary followed by the method `items()`, which returns a sequence of key-value pairs. The `for` loop then assigns each of these pairs to the 2 variables provided.  
 >We can also `loop through all the keys in a dictionary` using the `keys()` method, so the statement `for <key holding variable> in dictionary.keys()` will do exactly what you're expecting, also looping through the keys is actually the default behavior when looping through a dictionary, so in the above statement even ommiting `.keys()` in the above statement yields the same effect. (as a bonus, know that inside a particular such loop we can also access the value of the `current key` easily by the basic way (ponder)). Finally we can also see if a particular object exists as a key in a dictionary by the `keys()` method, e.g... `<object> in dictionary.keys()` will return true if the specified object is a key in the dictionary and false if it is not, therefore this can also be used as a conditional statement in an if statement (since the keys() method is not just for looping but rather it returns a sequence of all keys in a dictionary).
 >We can also `loop through a dictionary's keys in a particular order`, by default looping through a dictionary returns the items in the same order as they were inserted, but we can also use the `sorted()` function to sort the keys as they're returned in the `for` loop to get a copy of the keys in order. e.g...

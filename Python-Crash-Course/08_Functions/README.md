@@ -188,7 +188,8 @@ The results will be:
 (item1,)
 (item1, item2, item3)
 ```
-Note that we could also have looped thru the typle named <parameter_name> in the function body. This syntax works no matter how many arguments the function recieves.  
+Note that we could also have looped thru the typle named <parameter_name> in t 
+he function body. This syntax works no matter how many arguments the function recieves.  
 If we want a function to accept several different kinds of arguments, the parameter that accepts an arbitiary number of arguments must be placed last in the function definition. Python matches `positional` and `keyword` arguments first and then collects any remaining arguments in the final parameter, e.g...
 ```code
 def function_name(noun, *adjs):

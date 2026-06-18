@@ -240,3 +240,55 @@ We then see the the first and second info are to be always recieved in the funct
 We can mix positional, keyword, and arbitiary values in many different ways while writing our own function. 
 Random: The parameter name `**kwargs` is used often for nonspecific keyword arguments.
 
+Functions already make our code cleaner by seperating blocks of code away from the main program, we can go one step further by storing our functions in a seperate file called a `module` and then `importing` that module into our main program. An `import` statement tells Python to make the code in a module available in the currently running program file. Storing our functions in sepearte files help us hide the details of our program's code and focus on higher level logic, also helping in using same functions across many programs, sharing functions with other programmers etc, knowing how to import functions also allow us to use libriaries of functions that other programmers have written. There are several ways to import a module, as given below:
+`1: Importing an Entire Module`: To start importing functions, we first need to create a module. A `module` is a file ending in `.py` that contains the code we want to import into our program. Ofcourse we just make a Python file and put as many functions we want to in it and put the `module` we just created in the same directory as our main program file, to import the entire module to our main program file we use the import statement, e.g... `import module_name` in our program file and voila, Python reads this line and it tells Python to open the file called module_name and capy all the functions from it into our program (it happens BTS just before the program runs, we dont see it). To call a function from an imported module, we enter the name of the module we imported, `module_name`, followed by the name of the functions, `function_name()` seperated by a dot, this code produces the same output as a prpgram that had that function already inside the main program file, again, the syntax for the `import statement` to import an entire module named `module_name.py` is:
+```code 
+import module_name
+``` 
+and each function in this module is available through the syntax:
+```code
+module_name.function_name()
+```
+`2: Importing Specific Functions`: We can also import a specific function fro a module, the general syntax for this approach is:
+```code
+from module_name import function_name
+```
+We can import as many functions as we want from a module by seperating each function's name with a comma:
+```code
+from module_name import function_1, function_2, function_3
+```
+With this syntax, we don't need to use the dot notation when we call a function. Because we've explicitly imported the function `function_name` in the import statement, the syntax to use this imported function is now simply:
+```code
+function_name()
+```
+`3: Using as to Give a Function an Alias`: If the name of a function we're importing might conflict with an existing name in our program, or if the function name is long, we can use a short, unique `alias` - an alternative name similar to a nickname for the function. We will give the function this special nickname when we import the function, the general syntax for providing an alias is:
+```code
+from module_name import function_name as fn
+```
+now we can simply call the imported function function_name by using `fn()` without a dot notations!
+`4: Using as to Give a Module an Alias`: We can also provide an alias for a module name. Giving a module a short alias e.g... mn for module_name, allows we to call the module's functions more quickly. Calling mn.function_name() is more conside than calling module_name.function_name() and it lets us keep descriptive name of the function (which is more important) rather than the module, The general syntax of this approach is:
+```code
+import module_name as mn
+```
+`5: Importing All Functions in a Module`: We can tell Python to import every function in a module by using the asterisk (*) operator, the general syntax for this approach is:
+```code
+from module_name import *
+```
+The asterisk in the import statement tells Python to copy every function from the module module_name into the program file. Becausr every function is imported, we can call each funtion by name without using the dot notation, however this is not the best approach if working with large modules (ponder) The best approach is to import the function or functions we want, or import the entire module and use the dot notation.
+
+`Styling Functions`: Functions should have descriptive names, and these names should use lowecase letters and underscores, module names should follow these conventions as well.
+Every function should have a comment that explains consiselt what the function does and it should appear immediately after the function definition and use the docstring format. 
+If we specify a default value for a parameter, no spaces should be used on either side of the equal sign.
+```code
+def function_name(parameter_0, parameter_1='default value')
+```
+The same convention should be used for keyword arguments in function calls
+```code
+function_name(value_0, parameter_1='value')
+```
+PEP 8 recommends to limit lines of code to 79 characters, if a set of parameteres causes a function definition to be longer than 79 character, press ENTER afte the opening parenthesis on the definition line. On the next line, press the TAB key twice to seperate the list of arguments from the body of the function, which should only be indented one level. The structure goes like:
+```code
+def function_name(
+        parameter_0, parameter_1, paramter_2,
+        parameter_3, parameter_4):
+    function body...

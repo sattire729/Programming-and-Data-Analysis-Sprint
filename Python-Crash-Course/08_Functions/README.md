@@ -97,7 +97,40 @@ result = function_name(<arg1>, <arg2>, <arg3>)
 print(result)
 ```
 Here both the function calls work perfectly because we made the 3rd argument optional. (Nice)
+Random: We could have assigned `None` instead of an empty string to para3 and could have gotten the same results, `None` is used when a variable has no specific value assigned to it. We can think of it as a placeholder value. In conditional tests, `None` is evaluated to `False`.
+A function can return any kind of value we need it o, including more complicated data structures like lists and dictionaries, e.g...
+```code
+def function_name(para1, para2):
+    """Whatever the function does"""
+    dict = {'first': para1, 'second': para2}
+    return dict
 
+result = function_name(<arg1>, <arg2>)
+print(result)
+```
+and this will print a dictionary as prompted `{'first': <arg1>, 'second': <arg2>}` 
+We can use functions with all the Python structures we have learned about so far, e.g... `using a function with a while loop` a simple example goes like:
+```code
+def get_formatted_name(first_name, last_name):
+    """Return a full name, neatly formatted."""
+    full_name = f"{first_name} {last_name}"
+    return full_name.title()
+
+while True:
+    print("\nPlease tell me you name:")
+    print("(enter 'q' at any time to quit)")
+
+    f_name = input("First name: ")
+    if f_name == 'q':
+        break
+
+    l_name = input("Last name: ")
+    if f_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    print(f"\nHello, {formatted_name}!")
+```
 
 We can pass a list to a function when needed (or even more complex objects like dictionaries), when we do, the function gets direct access to the contents of the list. One simple example of `Passing a List` to a function might go like:
 ```code

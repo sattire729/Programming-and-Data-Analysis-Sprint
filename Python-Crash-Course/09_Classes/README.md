@@ -1,4 +1,4 @@
 ## Completed Chapter 08 Functions  
 ### Resources and Materials.  
-[📄 Click here to open the Annotated PDF](resources_used/.pdf)
+[📄 Click here to open the Annotated PDF](resources_used/09-classes-annotations.pdf)
 ### Key Insights and Progress Log.

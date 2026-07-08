@@ -15,7 +15,11 @@ function_name()
 ```
 Here in the first line we `defined a function` called function_name(), the `def` keyword informs python that we are defining a function. This is the `function definition`, which tells Python the name of the function and, if applicable, what kinds of information the function needs to do its job. The parenthesis hold that information, here they are empty and the function definition ends in a colon.
 Any indented lines that follow the function defition (first line) make up the `function body`. The text on the second line is a comment called a `docstring`, which describes wht the function does, when Python generates documentation for the functions in our programs, it looks for a string immediately after the function's defintion. These strings are usually enclosed in triple quotes, which lets us write multiple lines.
+<<<<<<< HEAD
 The third line and ahead is the actual code in the body of the function, when we want to use this function, we have to call it. A `function call` tells Python to execute the code in the function (the </code>, we will later know where we get the information we might need in a function). To `call` a function, we write the name of the function, followed by any necessary information in parenthesis (done in final line above)
+=======
+The third line and ahead is the actual code in the body of the function, when we want to use this function, we have to call it. A `function call` tells Python to execute the code in the function (the <code>, we will later know where we get the information we might need in a function). To `call` a function, we write the name of the function, followed by any necessary information in parenthesis (done in final line above)
+>>>>>>> a6b21d2d0522da94742f81051967634d6281374c
 We can `pass information to a function` easily, e.g... in the above code say we put a variable name inside the parenthesis of function in the function definition, then it would allow the function to accept any value of the variable we specify and we can use it in the </code> part in function body. The function will now expect us to provide a value of that variable everytime we call it, e.g...
 ```code
 def function_name(var):

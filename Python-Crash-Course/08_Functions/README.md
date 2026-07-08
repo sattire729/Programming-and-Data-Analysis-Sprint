@@ -69,3 +69,18 @@ function_name(list_name[:])
 ```
 Also we should note that even though we can preserve the contents of a list by passing a copy of it to our functions, we should pass the original list unless we have specific reason to pass a copy. Its more efficient for a function to work with an existing list, because it avoids using he time and memory needed to make a seperate list.  
 
+Sometimes we wont know ahead of time how many arguments a function needs to accept, fortunately Python allows a function to collect an arbitiary number of arguments from the calling statement. a parameter in format `*<parameter_name>` acceots as many arguments as the calling line provides. The asterisk in the parameter name tells Python to make a `tuple` called <parameter_name>, containing all the value the function revieves, note that now, during the function call, Python packs the arguments into a tuple even if the function recieves only one value. The code might go like:
+```code
+def function_name(*<parameter_name>):
+    """Print the argements provided"""
+    print(<parameter_name>)
+
+function_name(item1)
+function_name(item1, item2, item3)
+```
+The results will be:
+```code
+(item1,)
+(item1, item2, item3)
+```
+Note that we could also have looped thru the typle named <parameter_name> in the function body. This syntax works no matter how many arguments the function recieves.  

@@ -27,6 +27,17 @@ function_name(val)
 here the code will pass the value "val" to the variable "var" at the time we call it and we can use this variable any way we like in </code>.  
 The variable "var" in the defintion of function_name above is an example of a `parameter`, a piece of information the function needs to do its job. The value "val" in the function call is an `argument`. An `argument` is a piece of information that's passed from a function call to a function. When we call the function, we place the value we want the function to work with in the parentheses. 
 
+Because a function definition can have multiple parameters, a function call may need multiple arguments. We can pass arguments to our functions in a number of ways, e.g... `positonal arguments` which need to be in the same order the parametres were written, `keyword arguments` where each argument consists of a variable name and a value, and lists and dictionaries of values. we then looked at each of them in turn. 
+`Positional Arguments` - When we call a function, Python must match each argument in the function call with a parameter in the function definition. The simplest way to do this is based on the order of the arguments provided. Values matched up this way are called `Positional Arguments`. A simple code might go like: 
+```code
+def function_name(para1, para2):
+    """Whatever the function does"""
+    <code which may or may not use the
+     2 arguments (to be 100%) provided in the funcion call>
+
+function_name(<arg1>, <arg2>)
+```
+The definition shows that this function needs 2 arguments (since it has 2 parametres) so we need to provide them both during function call and then we can use them as we like in the function body, simply put, the values <arg1> and "<arg2> will be assigned to variables namesd "para1", "para2" and we can use this variables freely in the function body to do a specific task we like.
 We can pass a list to a function when needed (or even more complex objects like dictionaries), when we do, the function gets direct access to the contents of the list. One simple example of `Passing a List` to a function might go like:
 ```code
 def function_name(<[parameter] variable containing list>):
@@ -110,3 +121,27 @@ The noun cow is:
 ```
 Random note: We will often see the generic parameter name `*args` which collects `arbitiary positional arguments` like this.
 
+Sometimes we want to accept an arbitiary number of arguments but we dont know ahead of time what kind of information will be passed to the function (therefore using arbitiary positional arguments like above to make a tuple with unknown types of information is no good).  In this case, we write functions that accept as many key-value pairs as the calling statement provides. The code for this goes like: 
+```code
+def function_name(
+    info1, info2, # 2 compulsary regular arguments
+    **kwargs # arbitiary number of key-value pairs accepting argument
+    )
+    """Build a dictionary containing info about any object"""
+    kwargs['1st info'] = info1
+    kwargs['2nd info'] = info2
+    return kwargs
+
+info_dict = function_name('primary info', 'secondary info'
+                          3rd info='tertiary information',
+                          4th info='quaternary information')
+print(info_dict)
+```
+The definition of function_name expects a first and second information and then it allows the user to pass in as many key-value pairs as they want. The `double asterisks` before the parameter `**kwargs` cause Python to create a dictionary called kwargs containing all the extra key-value pairs the function recieves, within the function, we can access the key-value pairs in kwargs just as we would for any dictionary. 
+We then see the the first and second info are to be always recieved in the function definition line, and any more information can be fed by a user in the format: `key=value` and it will be stored in the dictionary named kwargs. During our function call we see that we passed the first and second info and then 2 key-value pairs on top, we assign the returned dictionary to the variable "info_dict" and print `info_dict`:
+```code
+{'1st info': 'primary information', '2nd info': 'secondary information,
+'3rd info': 'tertiary information', '4th info': 'quaternary information'}
+```
+We can mix positional, keyword, and arbitiary values in many different ways while writing our own function. 
+Random: The parameter name `**kwargs` is used often for nonspecific keyword arguments.

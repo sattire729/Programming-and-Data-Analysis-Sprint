@@ -37,7 +37,10 @@ def function_name(para1, para2):
 
 function_name(<arg1>, <arg2>)
 ```
-The definition shows that this function needs 2 arguments (since it has 2 parametres) so we need to provide them both during function call and then we can use them as we like in the function body, simply put, the values <arg1> and "<arg2> will be assigned to variables namesd "para1", "para2" and we can use this variables freely in the function body to do a specific task we like.
+The definition shows that this function needs 2 arguments (since it has 2 parametres) so we need to provide them both during function call and then we can use them as we like in the function body, simply put, the values <arg1> and "<arg2> will be assigned to variables namesd "para1", "para2" and we can use this variables freely in the function body to do a specific task we like. 
+We can also call a function as many times as needed, just changing the arguments while calling the function will act upon the new arguments the same way as it did for every call before them. 
+`Order matters in Positional Arguments`, we can get unexpected results if we mix up the order of arguments in a function call when using positional arguments (ponder). Make sure the order of the arguments in your function call matches the order of the parametres in the function's definition. 
+
 We can pass a list to a function when needed (or even more complex objects like dictionaries), when we do, the function gets direct access to the contents of the list. One simple example of `Passing a List` to a function might go like:
 ```code
 def function_name(<[parameter] variable containing list>):

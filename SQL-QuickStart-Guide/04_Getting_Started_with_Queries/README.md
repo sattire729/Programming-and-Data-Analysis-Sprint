@@ -12,6 +12,7 @@ CREATED ON: <Date or smth>
 DESCRIPTION: <What your query does consisely>
 */
 <Your Query>
+```
 
 Then we understood `The Structure of a Basic Query`, writing a query is like asking a question in any natural language, the phrasing matters, the details matter, and the order of the words matter. In the creating of an SQL query, we need to consider the following 5 questions:
 ```code
